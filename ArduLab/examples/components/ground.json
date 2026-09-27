@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "id": "GND-GEN-STD-GND-0000",
+  "name": "Ground",
+  "category": "Power",
+  "value": "GND",
+  "prefix": "GND",
+  "physical": { "widthMm": 6.0, "heightMm": 6.0 },
+  "visual": {
+    "primitives": [
+      { "type": "line", "x1Mm": 0.0, "y1Mm": 0.0, "x2Mm": 0.0, "y2Mm": 2.0 },
+      { "type": "line", "x1Mm": -2.5, "y1Mm": 2.0, "x2Mm": 2.5, "y2Mm": 2.0 },
+      { "type": "line", "x1Mm": -1.5, "y1Mm": 3.2, "x2Mm": 1.5, "y2Mm": 3.2 },
+      { "type": "line", "x1Mm": -0.6, "y1Mm": 4.4, "x2Mm": 0.6, "y2Mm": 4.4 }
+    ]
+  },
+  "pins": [
+    { "id": "1", "name": "GND", "type": "ground",
+      "anchorPosVisual": { "xMm": 0.0, "yMm": 0.0 },
+      "connectionPointVisual": { "xMm": 0.0, "yMm": 0.0 } }
+  ]
+}

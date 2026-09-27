@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "id": "CAP-GEN-STD-C-0603",
+  "name": "Capacitor",
+  "category": "Capacitor",
+  "value": "100n",
+  "prefix": "C",
+  "physical": { "widthMm": 10.0, "heightMm": 4.0 },
+  "visual": {
+    "primitives": [
+      { "type": "line", "x1Mm": -0.75, "y1Mm": -2.0, "x2Mm": -0.75, "y2Mm": 2.0 },
+      { "type": "line", "x1Mm": 0.75, "y1Mm": -2.0, "x2Mm": 0.75, "y2Mm": 2.0 },
+      { "type": "line", "x1Mm": -5.0, "y1Mm": 0.0, "x2Mm": -0.75, "y2Mm": 0.0 },
+      { "type": "line", "x1Mm": 0.75, "y1Mm": 0.0, "x2Mm": 5.0, "y2Mm": 0.0 }
+    ]
+  },
+  "pins": [
+    { "id": "1", "name": "1", "type": "passive",
+      "anchorPosVisual": { "xMm": -5.0, "yMm": 0.0 },
+      "connectionPointVisual": { "xMm": -5.0, "yMm": 0.0 } },
+    { "id": "2", "name": "2", "type": "passive",
+      "anchorPosVisual": { "xMm": 5.0, "yMm": 0.0 },
+      "connectionPointVisual": { "xMm": 5.0, "yMm": 0.0 } }
+  ]
+}

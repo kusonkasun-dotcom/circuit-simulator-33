@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/examples">
+    <file alias="resistor.json">components/resistor.json</file>
+    <file alias="capacitor.json">components/capacitor.json</file>
+    <file alias="led.json">components/led.json</file>
+    <file alias="ground.json">components/ground.json</file>
+    <file alias="vsource_dc.json">components/vsource_dc.json</file>
+</qresource>
+</RCC>

@@ -1,0 +1,251 @@
+{
+    "canvas": {
+        "heightMm": 297,
+        "widthMm": 420
+    },
+    "format": "ArduLab.Project",
+    "instances": [
+        {
+            "defId": "RES-GEN-STD-R-0603",
+            "definitionSnapshot": {
+                "category": "Resistor",
+                "id": "RES-GEN-STD-R-0603",
+                "name": "Resistor",
+                "physical": {
+                    "heightMm": 2,
+                    "widthMm": 10
+                },
+                "pins": [
+                    {
+                        "anchorPosVisual": {
+                            "xMm": -5,
+                            "yMm": 0
+                        },
+                        "connectionPointVisual": {
+                            "xMm": -5,
+                            "yMm": 0
+                        },
+                        "id": "1",
+                        "name": "1",
+                        "type": "passive"
+                    },
+                    {
+                        "anchorPosVisual": {
+                            "xMm": 5,
+                            "yMm": 0
+                        },
+                        "connectionPointVisual": {
+                            "xMm": 5,
+                            "yMm": 0
+                        },
+                        "id": "2",
+                        "name": "2",
+                        "type": "passive"
+                    }
+                ],
+                "prefix": "R",
+                "schemaVersion": "1.0",
+                "status": "DRAFT",
+                "value": "10k",
+                "visual": {
+                    "primitives": [
+                        {
+                            "heightMm": 2,
+                            "type": "rect",
+                            "widthMm": 6,
+                            "xMm": -3,
+                            "yMm": -1
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": -5,
+                            "x2Mm": -3,
+                            "y1Mm": 0,
+                            "y2Mm": 0
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": 3,
+                            "x2Mm": 5,
+                            "y1Mm": 0,
+                            "y2Mm": 0
+                        }
+                    ]
+                }
+            },
+            "instanceId": "81295113-ea0b-433d-b245-80ea903b740b",
+            "reference": "R1",
+            "rotation": 0,
+            "value": "220",
+            "xMm": 60,
+            "yMm": 40
+        },
+        {
+            "defId": "LED-GEN-STD-D-0805",
+            "definitionSnapshot": {
+                "category": "Diode",
+                "id": "LED-GEN-STD-D-0805",
+                "name": "LED",
+                "physical": {
+                    "heightMm": 5,
+                    "widthMm": 10
+                },
+                "pins": [
+                    {
+                        "anchorPosVisual": {
+                            "xMm": -5,
+                            "yMm": 0
+                        },
+                        "connectionPointVisual": {
+                            "xMm": -5,
+                            "yMm": 0
+                        },
+                        "id": "A",
+                        "name": "A",
+                        "type": "passive"
+                    },
+                    {
+                        "anchorPosVisual": {
+                            "xMm": 5,
+                            "yMm": 0
+                        },
+                        "connectionPointVisual": {
+                            "xMm": 5,
+                            "yMm": 0
+                        },
+                        "id": "K",
+                        "name": "K",
+                        "type": "passive"
+                    }
+                ],
+                "prefix": "D",
+                "schemaVersion": "1.0",
+                "status": "DRAFT",
+                "value": "RED",
+                "visual": {
+                    "primitives": [
+                        {
+                            "pointsMm": [
+                                {
+                                    "xMm": -1.5,
+                                    "yMm": -2
+                                },
+                                {
+                                    "xMm": -1.5,
+                                    "yMm": 2
+                                },
+                                {
+                                    "xMm": 1.5,
+                                    "yMm": 0
+                                },
+                                {
+                                    "xMm": -1.5,
+                                    "yMm": -2
+                                }
+                            ],
+                            "type": "polyline"
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": 1.5,
+                            "x2Mm": 1.5,
+                            "y1Mm": -2,
+                            "y2Mm": 2
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": -5,
+                            "x2Mm": -1.5,
+                            "y1Mm": 0,
+                            "y2Mm": 0
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": 1.5,
+                            "x2Mm": 5,
+                            "y1Mm": 0,
+                            "y2Mm": 0
+                        }
+                    ]
+                }
+            },
+            "instanceId": "83410550-900e-4d7f-b799-6f774a66ce9c",
+            "reference": "D1",
+            "rotation": 90,
+            "value": "RED",
+            "xMm": 90,
+            "yMm": 40
+        },
+        {
+            "defId": "GND-GEN-STD-GND-0000",
+            "definitionSnapshot": {
+                "category": "Power",
+                "id": "GND-GEN-STD-GND-0000",
+                "name": "Ground",
+                "physical": {
+                    "heightMm": 6,
+                    "widthMm": 6
+                },
+                "pins": [
+                    {
+                        "anchorPosVisual": {
+                            "xMm": 0,
+                            "yMm": 0
+                        },
+                        "connectionPointVisual": {
+                            "xMm": 0,
+                            "yMm": 0
+                        },
+                        "id": "1",
+                        "name": "GND",
+                        "type": "ground"
+                    }
+                ],
+                "prefix": "GND",
+                "schemaVersion": "1.0",
+                "status": "DRAFT",
+                "value": "GND",
+                "visual": {
+                    "primitives": [
+                        {
+                            "type": "line",
+                            "x1Mm": 0,
+                            "x2Mm": 0,
+                            "y1Mm": 0,
+                            "y2Mm": 2
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": -2.5,
+                            "x2Mm": 2.5,
+                            "y1Mm": 2,
+                            "y2Mm": 2
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": -1.5,
+                            "x2Mm": 1.5,
+                            "y1Mm": 3.2,
+                            "y2Mm": 3.2
+                        },
+                        {
+                            "type": "line",
+                            "x1Mm": -0.6,
+                            "x2Mm": 0.6,
+                            "y1Mm": 4.4,
+                            "y2Mm": 4.4
+                        }
+                    ]
+                }
+            },
+            "instanceId": "1bf96c3f-3c9b-4d2d-92ab-6a322ab4d802",
+            "reference": "GND1",
+            "rotation": 0,
+            "value": "GND",
+            "xMm": 90,
+            "yMm": 70
+        }
+    ],
+    "name": "sample_project",
+    "schemaVersion": "1.0"
+}
