@@ -34,9 +34,12 @@ Result<Database*> Database::open(const QString& path,
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
     db.setDatabaseName(path);
     if (!db.open()) {
+        const QString err = db.lastError().text();
+        db = QSqlDatabase();
+        QSqlDatabase::removeDatabase(connectionName);
         return Result<Database*>::fail("DB_OPEN",
             QString("Gagal membuka database katalog '%1': %2")
-                .arg(path, db.lastError().text()));
+                .arg(path, err));
     }
 
     // Pragmas for integrity and referential safety.

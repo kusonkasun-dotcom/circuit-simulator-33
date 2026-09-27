@@ -27,6 +27,9 @@ public:
     // All pin world positions across every item (for snap readout).
     QVector<QPair<QPointF, QString>> allPinPositions() const;
 
+    // Instance ids of all currently selected component items.
+    QVector<InstanceId> selectedInstanceIds() const;
+
 signals:
     // Emitted when a drag from the component browser is dropped on the canvas.
     void componentDropped(const QByteArray& definitionJson, QPointF sceneMM);

@@ -32,13 +32,9 @@ void CanvasView::applyZoom(qreal factor) {
 }
 
 void CanvasView::wheelEvent(QWheelEvent* e) {
-    if (e->modifiers() & Qt::ControlModifier) {
-        applyZoom(e->angleDelta().y() > 0 ? 1.15 : 1.0 / 1.15);
-        e->accept();
-    } else {
-        applyZoom(e->angleDelta().y() > 0 ? 1.15 : 1.0 / 1.15);
-        e->accept();
-    }
+    // Wheel zooms about the cursor (common in EDA canvases).
+    applyZoom(e->angleDelta().y() > 0 ? 1.15 : 1.0 / 1.15);
+    e->accept();
 }
 
 void CanvasView::mousePressEvent(QMouseEvent* e) {

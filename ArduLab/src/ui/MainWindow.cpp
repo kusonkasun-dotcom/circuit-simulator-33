@@ -259,18 +259,27 @@ void MainWindow::onCursorReadout(PointMM raw, PointMM snapped, bool hasPin,
 }
 
 void MainWindow::rotateSelected() {
-    if (!hasSelection_) return;
-    if (auto* inst = findInstance(project_, selectedId_)) {
-        const int newRot = geometry::normalizeRotation(inst->rotation + 90);
-        undo_->push(new RotateComponentCommand(&project_, scene_,
-            selectedId_, inst->rotation, newRot));
-        refreshSelectedProperties();
+    const auto ids = scene_->selectedInstanceIds();
+    if (ids.isEmpty()) return;
+    undo_->beginMacro(tr("Putar %1 komponen").arg(ids.size()));
+    for (const InstanceId& id : ids) {
+        if (auto* inst = findInstance(project_, id)) {
+            const int newRot = geometry::normalizeRotation(inst->rotation + 90);
+            undo_->push(new RotateComponentCommand(&project_, scene_,
+                id, inst->rotation, newRot));
+        }
     }
+    undo_->endMacro();
+    refreshSelectedProperties();
 }
 
 void MainWindow::deleteSelected() {
-    if (!hasSelection_) return;
-    undo_->push(new DeleteComponentCommand(&project_, scene_, selectedId_));
+    const auto ids = scene_->selectedInstanceIds();
+    if (ids.isEmpty()) return;
+    undo_->beginMacro(tr("Hapus %1 komponen").arg(ids.size()));
+    for (const InstanceId& id : ids)
+        undo_->push(new DeleteComponentCommand(&project_, scene_, id));
+    undo_->endMacro();
     hasSelection_ = false;
     props_->clearInstance();
 }

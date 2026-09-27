@@ -84,13 +84,12 @@ Result<ComponentDefinition> ComponentDefinition::fromJson(
     def.value = obj.value("value").toString();
     if (obj.contains("prefix")) def.prefix = obj.value("prefix").toString();
 
-    // status : imported components are DRAFT by policy regardless of file.
-    def.status = ComponentStatus::Draft;
-    if (warnings && obj.contains("status") &&
-        statusFromString(obj.value("status").toString()) == ComponentStatus::Validated) {
-        warnings->append(QString("%1: status 'VALIDATED' pada file diabaikan; "
-            "komponen impor selalu masuk sebagai DRAFT").arg(def.id));
-    }
+    // status : honor the value when present (default DRAFT). The catalog
+    // import path enforces the DRAFT policy separately, so instance snapshots
+    // round-trip their real status without being downgraded.
+    def.status = obj.contains("status")
+        ? statusFromString(obj.value("status").toString())
+        : ComponentStatus::Draft;
 
     // physical
     if (!obj.contains("physical") || !obj.value("physical").isObject())

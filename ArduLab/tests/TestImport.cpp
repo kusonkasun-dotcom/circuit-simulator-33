@@ -102,6 +102,22 @@ private slots:
         delete db;
     }
 
+    void validatedInFileIsForcedToDraftWithWarning() {
+        Database* db = openDb("valf"); QVERIFY(db);
+        CatalogRepository repo(db->handle());
+        ComponentImporter imp(&repo);
+        QJsonObject c = makeValidComponent("RES-GEN-STD-R-0603");
+        c["status"] = "VALIDATED";
+        auto report = imp.importJsonBytes(toBytes(c), "mem");
+        QCOMPARE(report.imported, 1);
+        // stored as DRAFT regardless of the file
+        QCOMPARE(repo.getById("RES-GEN-STD-R-0603").value().status,
+                 ComponentStatus::Draft);
+        // and the report warns about the ignored status
+        QVERIFY(!report.entries.first().warnings.isEmpty());
+        delete db;
+    }
+
     void missingFileReportsError() {
         Database* db = openDb("miss"); QVERIFY(db);
         CatalogRepository repo(db->handle());

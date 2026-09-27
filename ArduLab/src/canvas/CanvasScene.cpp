@@ -63,6 +63,14 @@ QVector<QPair<QPointF, QString>> CanvasScene::allPinPositions() const {
     return out;
 }
 
+QVector<InstanceId> CanvasScene::selectedInstanceIds() const {
+    QVector<InstanceId> ids;
+    for (auto* it : selectedItems())
+        if (auto* ci = dynamic_cast<ComponentItem*>(it))
+            ids.append(ci->instanceId());
+    return ids;
+}
+
 void CanvasScene::drawBackground(QPainter* painter, const QRectF& rect) {
     painter->fillRect(rect, QColor(250, 250, 248));
 

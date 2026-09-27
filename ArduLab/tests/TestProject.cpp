@@ -72,6 +72,19 @@ private slots:
         QCOMPARE(p.nextReference("R"), QString("R4"));
         QCOMPARE(p.nextReference("C"), QString("C1"));
     }
+
+    void snapshotStatusSurvivesRoundtrip() {
+        // A VALIDATED definition snapshot must NOT be downgraded on load/save.
+        auto def = ComponentDefinition::fromJson(
+            makeValidComponent("RES-GEN-STD-R-0603")).value();
+        def.status = ComponentStatus::Validated;
+        auto inst = ComponentInstance::fromDefinition(def, "R1", PointMM(1, 1));
+        inst.definition.status = ComponentStatus::Validated;
+
+        auto back = ComponentInstance::fromJson(inst.toJson());
+        QVERIFY(back.isOk());
+        QCOMPARE(back.value().definition.status, ComponentStatus::Validated);
+    }
 };
 
 QTEST_GUILESS_MAIN(TestProject)

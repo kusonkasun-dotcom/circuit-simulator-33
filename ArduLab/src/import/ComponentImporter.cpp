@@ -95,7 +95,10 @@ ImportReport ComponentImporter::importJsonBytes(const QByteArray& bytes,
             continue;
         }
         ComponentDefinition def = parsed.value();
-        def.status = ComponentStatus::Draft;   // policy
+        if (def.status == ComponentStatus::Validated)
+            warns.append(QString("%1: status 'VALIDATED' diabaikan; "
+                "komponen impor selalu masuk sebagai DRAFT").arg(def.id));
+        def.status = ComponentStatus::Draft;   // import policy
         if (def.source.isEmpty()) def.source = sourceLabel;
         entry.id = def.id;
         entry.warnings = warns;
